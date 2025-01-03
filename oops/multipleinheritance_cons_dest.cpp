@@ -1,25 +1,30 @@
-#include <iostream>
+/*#include <iostream>
 using namespace std;
 class sbi
 {
 
- public:void sbiacnt()
- {
-     cout<<"sbi\n";
- };
+
    public: sbi()
    {
        cout<<"sbi memory\n";
    }
-   ~
+   ~sbi()
+   {
+       cout<<"sbi memory release\n";
+   }
 
 };
 class axis
 {
-    public:void axisacnt()
+
+    public:axis()
     {
-        cout<<"axis\n";
-    };
+        cout<<"axis memory\n";
+    }
+    ~axis()
+    {
+        cout<<"axis memory release\n";
+    }
 };
 class customer:public sbi,public axis
 {
@@ -31,7 +36,47 @@ class customer:public sbi,public axis
 int main ()
 {
     customer ct;
-    ct.msg();
-    ct.axisacnt();
-    ct.sbiacnt();
+
+
+}
+*/
+#include <iostream>
+using namespace std;
+
+class SBI
+{
+    public:SBI()
+    {
+       cout << "SBI memory \n";
+    }
+    ~SBI()
+    {
+        cout << "SBI delete \n";
+    }
+};
+class HDFC
+{
+    public:HDFC()
+    {
+        cout << "HDFC memory \n";
+    }
+    ~HDFC()
+    {
+        cout << "hdfc delete \n";
+    }
+};
+class customer:public SBI,public HDFC
+{
+    public:customer()
+    {
+        cout << "customer memory \n";
+    }
+    ~customer()
+    {
+        cout << "customer delete \n";
+    }
+};
+int main()
+{
+    customer cus;
 }
